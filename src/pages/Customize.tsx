@@ -3,7 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Download } from "lucide-react";
-import perlaBase from "@/assets/perla-base.jpg";
+import perlaPole from "@/assets/perla-pole.jpg";
 import cityBackground from "@/assets/city-background.jpg";
 import nightBackground from "@/assets/night-background.jpg";
 
@@ -90,20 +90,22 @@ const Customize = () => {
                 >
                   <div className="relative">
                     <img
-                      src={perlaBase}
+                      src={perlaPole}
                       alt={`Perla ${modelId}`}
-                      className="w-64 h-64 object-contain"
+                      className="w-48 h-80 object-contain"
                       style={{
-                        filter: selectedPaddleColor === "Gray" ? "hue-rotate(15deg) saturate(0.5)" : "saturate(0.3)",
+                        filter: selectedPaddleColor === "Gray" 
+                          ? "brightness(1.2) contrast(0.8)" 
+                          : "brightness(0.6) contrast(1.2)",
                       }}
                     />
                     
-                    {/* Light effects */}
+                    {/* Light effects for pole */}
                     {(selectedLightPosition === "Left" || selectedLightPosition === "Both") && (
-                      <div className="absolute -left-8 top-1/2 w-16 h-16 bg-yellow-300 rounded-full opacity-60 blur-xl animate-pulse" />
+                      <div className="absolute left-8 top-16 w-20 h-20 bg-yellow-300 rounded-full opacity-50 blur-2xl animate-pulse" />
                     )}
                     {(selectedLightPosition === "Right" || selectedLightPosition === "Both") && (
-                      <div className="absolute -right-8 top-1/2 w-16 h-16 bg-yellow-300 rounded-full opacity-60 blur-xl animate-pulse" />
+                      <div className="absolute right-8 top-16 w-20 h-20 bg-yellow-300 rounded-full opacity-50 blur-2xl animate-pulse" />
                     )}
                   </div>
                 </div>
@@ -116,7 +118,7 @@ const Customize = () => {
             {/* Paddle Color */}
             <Card className="bg-card border border-border">
               <CardHeader>
-                <CardTitle className="text-card-foreground">Paddle Color</CardTitle>
+                <CardTitle className="text-card-foreground">Pole Color</CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
                 {(["Black", "Gray"] as PaddleColor[]).map((color) => (
@@ -127,11 +129,11 @@ const Customize = () => {
                     className="w-full justify-start"
                   >
                     <div
-                      className={`w-4 h-4 rounded-full mr-3 ${
-                        color === "Black" ? "bg-gray-900" : "bg-gray-500"
+                      className={`w-6 h-6 rounded mr-3 border-2 border-border ${
+                        color === "Black" ? "bg-gray-900" : "bg-gray-400"
                       }`}
                     />
-                    {color}
+                    {color} Pole
                   </Button>
                 ))}
               </CardContent>

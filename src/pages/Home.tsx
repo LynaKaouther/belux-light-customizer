@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import perlaBase from "@/assets/perla-base.jpg";
+import perlaPole from "@/assets/perla-pole.jpg";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -9,7 +9,7 @@ const Home = () => {
   const perlaModels = Array.from({ length: 20 }, (_, i) => ({
     id: i + 1,
     name: `Perla ${i + 1}`,
-    image: perlaBase,
+    image: perlaPole,
   }));
 
   const handleModelSelect = (modelId: number) => {
@@ -24,7 +24,7 @@ const Home = () => {
           BELUX
         </h1>
         <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-          Premium Lighting Solutions - Customize Your Perfect Light
+          Premium Street Lighting Solutions - Customize Your Perfect Light Pole
         </p>
       </header>
 
