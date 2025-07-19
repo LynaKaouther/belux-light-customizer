@@ -92,11 +92,11 @@ const Customize = () => {
                     <img
                       src={perlaPole}
                       alt={`Perla ${modelId}`}
-                      className="w-48 h-80 object-contain"
+                      className="w-48 h-80 object-contain transition-all duration-300"
                       style={{
                         filter: selectedPaddleColor === "Gray" 
-                          ? "brightness(1.2) contrast(0.8)" 
-                          : "brightness(0.6) contrast(1.2)",
+                          ? "brightness(1.8) contrast(0.9) saturate(0.3)" 
+                          : "brightness(0.4) contrast(1.5) saturate(0.2)",
                       }}
                     />
                     
